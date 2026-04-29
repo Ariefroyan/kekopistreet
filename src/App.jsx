@@ -1,19 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Menu from './pages/Menu';
-import Beans from './pages/Beans';
-import BeanDetail from './pages/BeanDetail';
+import { useState, useEffect, lazy, Suspense } from 'react';
+import { useIsMounted } from '@/hooks';
 import LoadingAnimation from './components/LoadingAnimation';
+
+// Lazy load route components
+const Layout = lazy(() => import('./components/Layout'));
+const Home = lazy(() => import('./pages/Home'));
+const Menu = lazy(() => import('./pages/Menu'));
+const Beans = lazy(() => import('./pages/Beans'));
+const BeanDetail = lazy(() => import('./pages/BeanDetail'));
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const isMountedRef = useRef(true);
+  const isMountedRef = useIsMounted();
 
   useEffect(() => {
-    isMountedRef.current = true;
-    
     const timer = setTimeout(() => {
       if (isMountedRef.current) {
         setLoading(false);
@@ -21,10 +22,9 @@ function App() {
     }, 2000);
 
     return () => {
-      isMountedRef.current = false;
       clearTimeout(timer);
     };
-  }, []);
+  }, [isMountedRef]);
 
   if (loading) {
     return <LoadingAnimation />;
@@ -34,14 +34,16 @@ function App() {
 
   return (
     <Router basename={basename}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/beans" element={<Beans />} />
-          <Route path="/bean/:beanId" element={<BeanDetail />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<LoadingAnimation />}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/beans" element={<Beans />} />
+            <Route path="/bean/:beanId" element={<BeanDetail />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Router>
   )
 }

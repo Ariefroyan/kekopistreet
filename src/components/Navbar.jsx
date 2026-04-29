@@ -1,46 +1,26 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useScrollDetection, useBodyScrollLock } from "@/hooks";
+import { APP_CONFIG, ROUTES } from "@/constants";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Menu", path: "/menu" },
-  { label: "Beans", path: "/beans" },
+  { label: "Home", path: ROUTES.HOME },
+  { label: "Menu", path: ROUTES.MENU },
+  { label: "Beans", path: ROUTES.BEANS },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScrollDetection(40);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 40);
-  }, []);
-
-  useEffect(() => {
-    handleScroll();
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+  useBodyScrollLock(mobileOpen);
 
   useEffect(() => {
     setMobileOpen(false);
-    
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [location, mobileOpen]);
+  }, [location]);
 
   return (
     <>
@@ -57,10 +37,10 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to={ROUTES.HOME} className="flex items-center gap-3 group">
               <img
                 src="https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/3974eaefd_3.png"
-                alt="KE.KOPI STREET"
+                alt={APP_CONFIG.name}
                 className="h-10 w-10 rounded-full object-cover flex-shrink-0"
                 onError={(e) => {
                   e.target.onerror = null;
@@ -68,7 +48,7 @@ export default function Navbar() {
                 }}
               />
               <span className="font-heading text-sm lg:text-base font-bold tracking-tight text-foreground whitespace-nowrap">
-                KE.KOPI STREET
+                {APP_CONFIG.name}
               </span>
             </Link>
 
