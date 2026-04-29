@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { coffeeBeans } from "@/data/beansData";
@@ -14,13 +14,48 @@ const roastLevels = {
 
 export default function BeanDetail() {
   const { beanId } = useParams();
+  const navigate = useNavigate();
   const [bean, setBean] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const foundBean = coffeeBeans.find(b => b.id === beanId);
-    setBean(foundBean);
-    setLoading(false);
+    let isMounted = true;
+    
+    const loadBean = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        if (!isMounted) return;
+        
+        const foundBean = coffeeBeans.find(b => b.id === beanId);
+        
+        if (!foundBean) {
+          setError('Bean not found');
+          setBean(null);
+        } else {
+          setBean(foundBean);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError('Failed to load bean details');
+          console.error('Error loading bean:', err);
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+    
+    loadBean();
+    
+    return () => {
+      isMounted = false;
+    };
   }, [beanId]);
 
   if (loading) {
@@ -31,10 +66,18 @@ export default function BeanDetail() {
     );
   }
 
-  if (!bean) {
+  if (error || !bean) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="font-mono text-sm text-muted-foreground">Bean not found.</p>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <p className="font-mono text-sm text-muted-foreground">
+          {error || 'Bean not found.'}
+        </p>
+        <button
+          onClick={() => navigate('/beans')}
+          className="px-4 py-2 border border-border hover:border-primary transition-colors duration-300 font-mono text-xs"
+        >
+          Back to Beans
+        </button>
       </div>
     );
   }
@@ -66,6 +109,10 @@ export default function BeanDetail() {
                 src={bean.image_url}
                 alt={bean.name}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f0f0f0" width="400" height="400"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3ENo Image%3C/text%3E%3C/svg%3E';
+                }}
               />
             ) : (
               <div className="w-full h-full bg-card flex items-center justify-center">

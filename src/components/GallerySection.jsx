@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback } from "react";
+import { X } from "lucide-react";
 
-// Dummy gallery images - nanti bisa diganti dengan data dari Base44
 const galleryImages = [
   {
     id: 1,
@@ -44,6 +44,26 @@ const galleryImages = [
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const handleImageClick = useCallback((image) => {
+    setSelectedImage(image);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setSelectedImage(null);
+  }, []);
+
+  const handleBackdropClick = useCallback((e) => {
+    if (e.target === e.currentTarget) {
+      setSelectedImage(null);
+    }
+  }, []);
+
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') {
+      setSelectedImage(null);
+    }
+  }, []);
+
   return (
     <section className="py-24 lg:py-32 px-6 lg:px-8 border-t border-border">
       <div className="max-w-7xl mx-auto">
@@ -80,12 +100,26 @@ export default function GallerySection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className={`relative overflow-hidden cursor-pointer group ${image.span}`}
-              onClick={() => setSelectedImage(image)}
+              onClick={() => handleImageClick(image)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleImageClick(image);
+                }
+              }}
+              aria-label={`View ${image.alt}`}
             >
               <img
                 src={image.url}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f0f0f0" width="400" height="400"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage Error%3C/text%3E%3C/svg%3E';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
@@ -101,33 +135,48 @@ export default function GallerySection() {
       </div>
 
       {/* Lightbox Modal */}
-      {selectedImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex items-center justify-center p-6"
-          onClick={() => setSelectedImage(null)}
-        >
+      <AnimatePresence>
+        {selectedImage && (
           <motion.div
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            className="relative max-w-5xl w-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex items-center justify-center p-6"
+            onClick={handleBackdropClick}
+            onKeyDown={handleKeyDown}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
           >
-            <img
-              src={selectedImage.url}
-              alt={selectedImage.alt}
-              className="w-full h-auto max-h-[80vh] object-contain"
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border hover:border-primary transition-colors duration-300"
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-5xl w-full"
+              onClick={(e) => e.stopPropagation()}
             >
-              <span className="font-mono text-xs text-foreground">✕</span>
-            </button>
+              <img
+                id="modal-title"
+                src={selectedImage.url}
+                alt={selectedImage.alt}
+                className="w-full h-auto max-h-[80vh] object-contain"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23f0f0f0" width="800" height="600"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage Error%3C/text%3E%3C/svg%3E';
+                }}
+              />
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm border border-border hover:border-primary transition-colors duration-300"
+                aria-label="Close modal"
+              >
+                <X size={16} className="text-foreground" />
+              </button>
+              <p className="sr-only">{selectedImage.alt}</p>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
     </section>
   );
 }

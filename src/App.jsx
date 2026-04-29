@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
@@ -9,22 +9,31 @@ import LoadingAnimation from './components/LoadingAnimation';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const isMountedRef = useRef(true);
 
   useEffect(() => {
-    // Simulate initial loading
+    isMountedRef.current = true;
+    
     const timer = setTimeout(() => {
-      setLoading(false);
+      if (isMountedRef.current) {
+        setLoading(false);
+      }
     }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      isMountedRef.current = false;
+      clearTimeout(timer);
+    };
   }, []);
 
   if (loading) {
     return <LoadingAnimation />;
   }
 
+  const basename = import.meta.env.PROD ? '/kekopistreet' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

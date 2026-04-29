@@ -4,7 +4,6 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Base path untuk GitHub Pages
   base: process.env.NODE_ENV === 'production' ? '/kekopistreet/' : '/',
   logLevel: 'error',
   plugins: [
@@ -18,13 +17,20 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'react-vendor': ['react', 'react-dom'],
+          'router-vendor': ['react-router-dom'],
           'animation-vendor': ['framer-motion'],
-        }
+          'ui-vendor': ['lucide-react', 'clsx', 'tailwind-merge'],
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000,
   }
 });
