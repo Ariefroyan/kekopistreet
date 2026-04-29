@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
 
-// Coffee shop images - Update these URLs with your actual hosted images
+// Coffee shop images - Real photos from local folder
 const shopImages = [
   {
     id: 1,
-    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/e76612687_generated_234e9ad6.png",
+    url: "/images/shop-photo-1.jpg",
     instagramUrl: "https://www.instagram.com/p/DTPxgPFD_Nj/",
-    alt: "KE.KOPI STREET - Tampak Depan"
+    alt: "KE.KOPI STREET - Coffee Shop"
   },
   {
     id: 2,
-    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/8a1873ad8_generated_e6dc2a68.png",
+    url: "/images/shop-photo-2.jpg",
     instagramUrl: "https://www.instagram.com/p/DTW-H3JgNTH/",
-    alt: "KE.KOPI STREET - Interior"
+    alt: "KE.KOPI STREET - Counter"
   },
   {
     id: 3,
-    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/5d5506b1f_generated_7b76a98a.png",
+    url: "/images/shop-photo-3.jpg",
     instagramUrl: "https://www.instagram.com/p/DO8pezbDx23/",
-    alt: "KE.KOPI STREET - Lokasi"
+    alt: "KE.KOPI STREET - Espresso Machine"
   },
 ];
 
