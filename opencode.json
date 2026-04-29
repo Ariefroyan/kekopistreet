@@ -1,0 +1,1589 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "enowxlabs": {
+      "models": {
+        "auto": {
+          "limit": {
+            "context": 1000000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "auto (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "auto-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "auto-thinking (enowX Labs)"
+        },
+        "claude-haiku-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-haiku-4.5 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "claude-haiku-4.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-haiku-4.5-thinking (enowX Labs)"
+        },
+        "claude-opus-4.6": {
+          "limit": {
+            "context": 1000000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-opus-4.6 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "claude-sonnet-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-sonnet-4 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "claude-sonnet-4-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-sonnet-4-thinking (enowX Labs)"
+        },
+        "claude-sonnet-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-sonnet-4.5 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "claude-sonnet-4.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "claude-sonnet-4.5-thinking (enowX Labs)"
+        },
+        "codex-gpt-5.1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "codex-gpt-5.1 (enowX Labs)"
+        },
+        "codex-gpt-5.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "codex-gpt-5.2 (enowX Labs)"
+        },
+        "codex-gpt-5.3": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "codex-gpt-5.3 (enowX Labs)"
+        },
+        "codex-gpt-5.4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "codex-gpt-5.4 (enowX Labs)"
+        },
+        "codex-gpt-5.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "codex-gpt-5.5 (enowX Labs)"
+        },
+        "deepseek-3.2": {
+          "limit": {
+            "context": 164000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "deepseek-3.2 (enowX Labs)"
+        },
+        "deepseek-3.2-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "deepseek-3.2-thinking (enowX Labs)"
+        },
+        "deepseek-v3-2-volc": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "deepseek-v3-2-volc (enowX Labs)"
+        },
+        "enowx-default": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "enowx-default (enowX Labs)"
+        },
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gemini-2.5-flash (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gemini-2.5-pro (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gemini-3.0-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gemini-3.0-flash (enowX Labs)"
+        },
+        "gemini-3.1-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gemini-3.1-flash-lite (enowX Labs)"
+        },
+        "gemini-3.1-pro": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gemini-3.1-pro (enowX Labs)"
+        },
+        "glm-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "glm-5 (enowX Labs)"
+        },
+        "glm-5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "glm-5-thinking (enowX Labs)"
+        },
+        "gpt-5.1": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.1 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.1-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.1-codex (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.1-codex-max": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.1-codex-max (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.1-codex-mini": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.1-codex-mini (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.2": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.2 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.2-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.2-codex (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.3-codex": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.3-codex (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "gpt-5.4": {
+          "limit": {
+            "context": 400000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "gpt-5.4 (enowX Labs)",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        },
+        "kimi-k2.5": {
+          "limit": {
+            "context": 250000,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "kimi-k2.5 (enowX Labs)"
+        },
+        "minimax-m2.1": {
+          "limit": {
+            "context": 196000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "minimax-m2.1 (enowX Labs)"
+        },
+        "minimax-m2.1-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "minimax-m2.1-thinking (enowX Labs)"
+        },
+        "minimax-m2.5": {
+          "limit": {
+            "context": 196000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "minimax-m2.5 (enowX Labs)"
+        },
+        "minimax-m2.5-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "minimax-m2.5-thinking (enowX Labs)"
+        },
+        "qwen3-coder-next": {
+          "limit": {
+            "context": 256000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "qwen3-coder-next (enowX Labs)"
+        },
+        "qwen3-coder-next-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "qwen3-coder-next-thinking (enowX Labs)"
+        },
+        "ws-claude-3.7-sonnet": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-3.7-sonnet (enowX Labs)"
+        },
+        "ws-claude-haiku-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-haiku-4.5 (enowX Labs)"
+        },
+        "ws-claude-opus-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-opus-4 (enowX Labs)"
+        },
+        "ws-claude-opus-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-opus-4.5 (enowX Labs)"
+        },
+        "ws-claude-opus-4.6": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-opus-4.6 (enowX Labs)"
+        },
+        "ws-claude-opus-4.7": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-opus-4.7 (enowX Labs)"
+        },
+        "ws-claude-sonnet-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-sonnet-4 (enowX Labs)"
+        },
+        "ws-claude-sonnet-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-sonnet-4.5 (enowX Labs)"
+        },
+        "ws-claude-sonnet-4.6": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-claude-sonnet-4.6 (enowX Labs)"
+        },
+        "ws-command-a": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-command-a (enowX Labs)"
+        },
+        "ws-deepseek-chat": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-deepseek-chat (enowX Labs)"
+        },
+        "ws-deepseek-r1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-deepseek-r1 (enowX Labs)"
+        },
+        "ws-deepseek-v3.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-deepseek-v3.2 (enowX Labs)"
+        },
+        "ws-gemini-2.5-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gemini-2.5-flash (enowX Labs)"
+        },
+        "ws-gemini-2.5-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gemini-2.5-pro (enowX Labs)"
+        },
+        "ws-gemini-3-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gemini-3-pro (enowX Labs)"
+        },
+        "ws-gemini-3.1-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gemini-3.1-pro (enowX Labs)"
+        },
+        "ws-glm-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-glm-5 (enowX Labs)"
+        },
+        "ws-glm-5.1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-glm-5.1 (enowX Labs)"
+        },
+        "ws-gpt-4o": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-4o (enowX Labs)"
+        },
+        "ws-gpt-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5 (enowX Labs)"
+        },
+        "ws-gpt-5-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5-mini (enowX Labs)"
+        },
+        "ws-gpt-5.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5.2 (enowX Labs)"
+        },
+        "ws-gpt-5.2-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5.2-pro (enowX Labs)"
+        },
+        "ws-gpt-5.4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5.4 (enowX Labs)"
+        },
+        "ws-gpt-5.4-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-gpt-5.4-pro (enowX Labs)"
+        },
+        "ws-grok-3": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-grok-3 (enowX Labs)"
+        },
+        "ws-grok-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-grok-4 (enowX Labs)"
+        },
+        "ws-grok-4-fast": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-grok-4-fast (enowX Labs)"
+        },
+        "ws-grok-4.1-fast": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-grok-4.1-fast (enowX Labs)"
+        },
+        "ws-kimi-k2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-kimi-k2 (enowX Labs)"
+        },
+        "ws-kimi-k2.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-kimi-k2.5 (enowX Labs)"
+        },
+        "ws-llama-4-maverick": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-llama-4-maverick (enowX Labs)"
+        },
+        "ws-llama-4-scout": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-llama-4-scout (enowX Labs)"
+        },
+        "ws-mimo-v2-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-mimo-v2-flash (enowX Labs)"
+        },
+        "ws-mimo-v2-omni": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-mimo-v2-omni (enowX Labs)"
+        },
+        "ws-mimo-v2-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-mimo-v2-pro (enowX Labs)"
+        },
+        "ws-minimax-m2.7": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-minimax-m2.7 (enowX Labs)"
+        },
+        "ws-mistral-large": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-mistral-large (enowX Labs)"
+        },
+        "ws-mistral-medium-3.1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-mistral-medium-3.1 (enowX Labs)"
+        },
+        "ws-o1-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-o1-pro (enowX Labs)"
+        },
+        "ws-o3": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-o3 (enowX Labs)"
+        },
+        "ws-o3-deep-research": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-o3-deep-research (enowX Labs)"
+        },
+        "ws-o4-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-o4-mini (enowX Labs)"
+        },
+        "ws-qwen3-235b": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-qwen3-235b (enowX Labs)"
+        },
+        "ws-qwen3-coder": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-qwen3-coder (enowX Labs)"
+        },
+        "ws-qwen3-max": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-qwen3-max (enowX Labs)"
+        },
+        "ws-qwen3-max-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "ws-qwen3-max-thinking (enowX Labs)"
+        },
+        "yep-claude-haiku-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-haiku-4 (enowX Labs)"
+        },
+        "yep-claude-opus-4.6": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-opus-4.6 (enowX Labs)"
+        },
+        "yep-claude-opus-4.6-fast": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-opus-4.6-fast (enowX Labs)"
+        },
+        "yep-claude-opus-4.7": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-opus-4.7 (enowX Labs)"
+        },
+        "yep-claude-sonnet-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-sonnet-4 (enowX Labs)"
+        },
+        "yep-claude-sonnet-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-sonnet-4.5 (enowX Labs)"
+        },
+        "yep-claude-sonnet-4.6": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-claude-sonnet-4.6 (enowX Labs)"
+        },
+        "yep-deepseek-r1": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-deepseek-r1 (enowX Labs)"
+        },
+        "yep-deepseek-v3": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-deepseek-v3 (enowX Labs)"
+        },
+        "yep-deepseek-v3.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-deepseek-v3.2 (enowX Labs)"
+        },
+        "yep-devstral-2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-devstral-2 (enowX Labs)"
+        },
+        "yep-gemini-2.5-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-2.5-flash (enowX Labs)"
+        },
+        "yep-gemini-2.5-flash-lite": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-2.5-flash-lite (enowX Labs)"
+        },
+        "yep-gemini-2.5-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-2.5-pro (enowX Labs)"
+        },
+        "yep-gemini-3-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-3-flash (enowX Labs)"
+        },
+        "yep-gemini-3.1-flash-lite": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-3.1-flash-lite (enowX Labs)"
+        },
+        "yep-gemini-3.1-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemini-3.1-pro (enowX Labs)"
+        },
+        "yep-gemma-4-26b": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemma-4-26b (enowX Labs)"
+        },
+        "yep-gemma-4-31b": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gemma-4-31b (enowX Labs)"
+        },
+        "yep-gpt-4o": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-4o (enowX Labs)"
+        },
+        "yep-gpt-4o-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-4o-mini (enowX Labs)"
+        },
+        "yep-gpt-5.1-codex-max": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.1-codex-max (enowX Labs)"
+        },
+        "yep-gpt-5.2": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.2 (enowX Labs)"
+        },
+        "yep-gpt-5.2-chat": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.2-chat (enowX Labs)"
+        },
+        "yep-gpt-5.2-codex": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.2-codex (enowX Labs)"
+        },
+        "yep-gpt-5.2-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.2-pro (enowX Labs)"
+        },
+        "yep-gpt-5.3-chat": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.3-chat (enowX Labs)"
+        },
+        "yep-gpt-5.3-codex": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.3-codex (enowX Labs)"
+        },
+        "yep-gpt-5.4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.4 (enowX Labs)"
+        },
+        "yep-gpt-5.4-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.4-mini (enowX Labs)"
+        },
+        "yep-gpt-5.4-nano": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.4-nano (enowX Labs)"
+        },
+        "yep-gpt-5.4-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-5.4-pro (enowX Labs)"
+        },
+        "yep-gpt-oss-120b": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-gpt-oss-120b (enowX Labs)"
+        },
+        "yep-grok-4.1-fast": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-grok-4.1-fast (enowX Labs)"
+        },
+        "yep-grok-4.20": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-grok-4.20 (enowX Labs)"
+        },
+        "yep-grok-4.20-multi": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-grok-4.20-multi (enowX Labs)"
+        },
+        "yep-kimi-k2.5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-kimi-k2.5 (enowX Labs)"
+        },
+        "yep-llama-4-maverick": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-llama-4-maverick (enowX Labs)"
+        },
+        "yep-llama-4-scout": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-llama-4-scout (enowX Labs)"
+        },
+        "yep-mimo-v2-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-mimo-v2-pro (enowX Labs)"
+        },
+        "yep-minimax-m2.7": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-minimax-m2.7 (enowX Labs)"
+        },
+        "yep-mistral-small-4": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-mistral-small-4 (enowX Labs)"
+        },
+        "yep-nemotron-3-super": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-nemotron-3-super (enowX Labs)"
+        },
+        "yep-qwen-3-coder": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-qwen-3-coder (enowX Labs)"
+        },
+        "yep-qwen-3-max-thinking": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-qwen-3-max-thinking (enowX Labs)"
+        },
+        "yep-qwen-3.5-397b": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-qwen-3.5-397b (enowX Labs)"
+        },
+        "yep-qwen-3.5-plus": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-qwen-3.5-plus (enowX Labs)"
+        },
+        "yep-qwen-3.6-plus": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-qwen-3.6-plus (enowX Labs)"
+        },
+        "yep-sonar": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-sonar (enowX Labs)"
+        },
+        "yep-sonar-pro": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-sonar-pro (enowX Labs)"
+        },
+        "yep-step-3.5-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "yep-step-3.5-flash (enowX Labs)"
+        }
+      },
+      "name": "enowX Labs",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "enx-290afd2f48a2d9b40d77e7df555bdd8695e25ac064e91a59c34d286a63c2be32",
+        "baseURL": "http://localhost:1430/v1"
+      }
+    }
+  }
+}
