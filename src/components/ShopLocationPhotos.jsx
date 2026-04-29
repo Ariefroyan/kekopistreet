@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
 
-// Placeholder images - ganti dengan foto asli coffee shop
+// Real coffee shop images from Instagram
 const shopImages = [
   {
     id: 1,
-    url: "/images/shop-exterior.jpg", // Foto tampak depan coffee shop
+    url: "https://www.instagram.com/p/DTPxgPFD_Nj/media/?size=l",
+    instagramUrl: "https://www.instagram.com/p/DTPxgPFD_Nj/",
     alt: "KE.KOPI STREET - Tampak Depan",
     caption: "Tampak Depan Coffee Shop"
   },
   {
     id: 2,
-    url: "/images/shop-interior.jpg", // Foto interior
+    url: "https://www.instagram.com/p/DTW-H3JgNTH/media/?size=l",
+    instagramUrl: "https://www.instagram.com/p/DTW-H3JgNTH/",
     alt: "KE.KOPI STREET - Interior",
     caption: "Suasana Interior"
   },
   {
     id: 3,
-    url: "/images/shop-location.jpg", // Foto lokasi/petunjuk
+    url: "https://www.instagram.com/p/DO8pezbDx23/media/?size=l",
+    instagramUrl: "https://www.instagram.com/p/DO8pezbDx23/",
     alt: "KE.KOPI STREET - Lokasi",
     caption: "Petunjuk Lokasi"
   },
@@ -61,13 +64,16 @@ export default function ShopLocationPhotos() {
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {shopImages.map((image, i) => (
-            <motion.div
+            <motion.a
               key={image.id}
+              href={image.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="group relative overflow-hidden bg-card border border-border"
+              className="group relative overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-300"
             >
               {/* Image */}
               <div className="aspect-[4/3] overflow-hidden">
@@ -91,9 +97,28 @@ export default function ShopLocationPhotos() {
                 </p>
               </div>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.div>
+              {/* Hover Overlay with Instagram Icon */}
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-primary"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </div>
+              </div>
+            </motion.a>
           ))}
         </div>
 
