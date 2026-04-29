@@ -12,9 +12,9 @@ export default function HeroSection() {
         <img
           src={HERO_IMG}
           alt="Espresso extraction from bottomless portafilter"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       </div>
 
       {/* Content */}
@@ -41,11 +41,16 @@ export default function HeroSection() {
           KE.KOPI
           <br />
           <span className="text-primary">STREET</span>
-          <br />
-          <span className="text-foreground/20 text-2xl sm:text-3xl lg:text-4xl font-normal font-mono tracking-widest">
-            KOPI KAMI DIGILING, BUKAN DIGUNTING
-          </span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="font-mono text-sm sm:text-base lg:text-lg text-foreground/70 uppercase tracking-wider mb-6"
+        >
+          Kopi Kami Digiling, Bukan Digunting
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -60,19 +65,19 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="flex items-center gap-6"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <Link
             to="/menu"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading text-sm font-semibold tracking-wide hover:bg-primary/90 transition-all duration-300"
-          >
-            EXPLORE MENU
-          </Link>
-          <Link
-            to="/menu"
-            className="inline-flex items-center gap-3 px-8 py-4 border border-border text-foreground/80 font-heading text-sm font-semibold tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading text-sm font-semibold tracking-wide hover:bg-primary/90 transition-all duration-300 shadow-lg"
           >
             LIHAT MENU
+          </Link>
+          <Link
+            to="/beans"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-border text-foreground/80 font-heading text-sm font-semibold tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
+          >
+            EXPLORE BEANS
           </Link>
         </motion.div>
       </div>

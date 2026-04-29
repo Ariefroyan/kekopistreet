@@ -61,13 +61,13 @@ export default function Navbar() {
               <img
                 src="https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/3974eaefd_3.png"
                 alt="KE.KOPI STREET"
-                className="h-10 w-10 rounded-full object-cover"
+                className="h-10 w-10 rounded-full object-cover flex-shrink-0"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.style.display = 'none';
                 }}
               />
-              <span className="font-heading text-base font-bold tracking-tight text-foreground">
+              <span className="font-heading text-sm lg:text-base font-bold tracking-tight text-foreground whitespace-nowrap">
                 KE.KOPI STREET
               </span>
             </Link>
