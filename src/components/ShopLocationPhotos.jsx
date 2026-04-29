@@ -1,27 +1,24 @@
 import { motion } from "framer-motion";
 
-// Real coffee shop images from Instagram
+// Coffee shop images - Update these URLs with your actual hosted images
 const shopImages = [
   {
     id: 1,
-    url: "https://www.instagram.com/p/DTPxgPFD_Nj/media/?size=l",
+    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/e76612687_generated_234e9ad6.png",
     instagramUrl: "https://www.instagram.com/p/DTPxgPFD_Nj/",
-    alt: "KE.KOPI STREET - Tampak Depan",
-    caption: "Tampak Depan Coffee Shop"
+    alt: "KE.KOPI STREET - Tampak Depan"
   },
   {
     id: 2,
-    url: "https://www.instagram.com/p/DTW-H3JgNTH/media/?size=l",
+    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/8a1873ad8_generated_e6dc2a68.png",
     instagramUrl: "https://www.instagram.com/p/DTW-H3JgNTH/",
-    alt: "KE.KOPI STREET - Interior",
-    caption: "Suasana Interior"
+    alt: "KE.KOPI STREET - Interior"
   },
   {
     id: 3,
-    url: "https://www.instagram.com/p/DO8pezbDx23/media/?size=l",
+    url: "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/5d5506b1f_generated_7b76a98a.png",
     instagramUrl: "https://www.instagram.com/p/DO8pezbDx23/",
-    alt: "KE.KOPI STREET - Lokasi",
-    caption: "Petunjuk Lokasi"
+    alt: "KE.KOPI STREET - Lokasi"
   },
 ];
 
@@ -61,7 +58,7 @@ export default function ShopLocationPhotos() {
           </motion.p>
         </div>
 
-        {/* Photo Grid */}
+        {/* Photo Grid - No captions, just images */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {shopImages.map((image, i) => (
             <motion.a
@@ -84,17 +81,9 @@ export default function ShopLocationPhotos() {
                   loading="lazy"
                   onError={(e) => {
                     e.target.onerror = null;
-                    // Fallback to placeholder
-                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23f0f0f0" width="800" height="600"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-size="24"%3E' + encodeURIComponent(image.caption) + '%3C/text%3E%3C/svg%3E';
+                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23f0f0f0" width="800" height="600"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-size="20"%3EKE.KOPI STREET%3C/text%3E%3C/svg%3E';
                   }}
                 />
-              </div>
-
-              {/* Caption */}
-              <div className="p-4 bg-background/95 backdrop-blur-sm">
-                <p className="font-mono text-xs text-foreground/80 tracking-wide">
-                  {image.caption}
-                </p>
               </div>
 
               {/* Hover Overlay with Instagram Icon */}
