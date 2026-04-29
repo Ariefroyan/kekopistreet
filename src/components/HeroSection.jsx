@@ -67,17 +67,17 @@ export default function HeroSection() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
-          <Link
-            to="/menu"
+          <a
+            href="tel:087765655654"
             className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-heading text-sm font-semibold tracking-wide hover:bg-primary/90 transition-all duration-300 shadow-lg"
           >
-            LIHAT MENU
-          </Link>
+            HUBUNGI KAMI
+          </a>
           <Link
-            to="/beans"
+            to="/menu"
             className="inline-flex items-center gap-3 px-8 py-4 border border-border text-foreground/80 font-heading text-sm font-semibold tracking-wide hover:border-primary hover:text-primary transition-all duration-300"
           >
-            EXPLORE BEANS
+            LIHAT MENU
           </Link>
         </motion.div>
       </div>
