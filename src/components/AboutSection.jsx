@@ -82,7 +82,7 @@ export default function AboutSection() {
               transition={{ delay: 0.2 }}
               className="text-base text-foreground/60 leading-relaxed mb-12"
             >
-              Berlokasi di Jl. Selaparang No.60, Cakranegara — KE.KOPI STREET adalah ruang ngobrol, tempat kerja, dan sudut favorit warga Mataram. Hubungi kami di 0877-6565-5654.
+              Berlokasi di Jl. Jend. Sudirman No.22, Selaparang — KE.KOPI STREET adalah ruang ngobrol, tempat kerja, dan sudut favorit warga Mataram. Hubungi kami di 0877-6565-5654.
             </motion.p>
 
             {/* Stats Grid */}

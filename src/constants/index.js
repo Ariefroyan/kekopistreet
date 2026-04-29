@@ -4,10 +4,13 @@ export const APP_CONFIG = {
   tagline: 'Kopi Kami Digiling, Bukan Digunting',
   description: 'Kopi lokal berkualitas, harga merakyat mulai Rp 3.000',
   location: {
-    address: 'Jl. Selaparang No.60, Mayura, Cakranegara',
+    address: 'Jl. Jend. Sudirman No.22, Rembiga',
+    district: 'Kec. Selaparang',
     city: 'Kota Mataram',
     province: 'Nusa Tenggara Barat',
-    postalCode: '83239',
+    postalCode: '83124',
+    country: 'Indonesia',
+    fullAddress: 'Jl. Jend. Sudirman No.22, Rembiga, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83124, Indonesia',
     coordinates: {
       lat: -8.5823,
       lng: 116.1123,

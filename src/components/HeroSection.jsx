@@ -28,7 +28,7 @@ export default function HeroSection() {
         >
           <div className="w-8 h-px bg-primary" />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-            Jl. Selaparang No.60 · Cakranegara · Mataram
+            Jl. Jend. Sudirman No.22 · Selaparang · Mataram
           </span>
         </motion.div>
 

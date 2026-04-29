@@ -29,11 +29,11 @@ export default function FooterSection() {
                 Location
               </p>
               <p className="text-sm text-foreground/80 leading-relaxed">
-                Jl. Selaparang No.60, Mayura
+                Jl. Jend. Sudirman No.22, Rembiga
                 <br />
-                Cakranegara, Kota Mataram
+                Kec. Selaparang, Kota Mataram
                 <br />
-                Nusa Tenggara Barat 83239
+                Nusa Tenggara Barat 83124
               </p>
             </div>
 

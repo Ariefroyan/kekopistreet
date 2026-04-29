@@ -6,8 +6,8 @@ export default function LocationSection() {
     {
       icon: MapPin,
       label: "Address",
-      value: "Jl. Selaparang No.60, Mayura, Cakranegara",
-      subvalue: "Kota Mataram, NTB 83239",
+      value: "Jl. Jend. Sudirman No.22, Rembiga",
+      subvalue: "Kec. Selaparang, Kota Mataram, NTB 83124",
     },
     {
       icon: Phone,
