@@ -6,7 +6,6 @@ const navItems = [
   { icon: Home, label: "Home", path: "/" },
   { icon: Coffee, label: "Menu", path: "/menu" },
   { icon: Package, label: "Beans", path: "/beans" },
-  { icon: MapPin, label: "Location", path: "/#location" },
 ];
 
 export default function MobileBottomNav() {

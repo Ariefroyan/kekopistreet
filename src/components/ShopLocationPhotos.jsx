@@ -4,19 +4,19 @@ import { motion } from "framer-motion";
 const shopImages = [
   {
     id: 1,
-    url: "/images/shop-photo-1.jpg",
+    url: `${import.meta.env.BASE_URL}images/shop-photo-1.jpg`,
     instagramUrl: "https://www.instagram.com/p/DTPxgPFD_Nj/",
     alt: "KE.KOPI STREET - Coffee Shop"
   },
   {
     id: 2,
-    url: "/images/shop-photo-2.jpg",
+    url: `${import.meta.env.BASE_URL}images/shop-photo-2.jpg`,
     instagramUrl: "https://www.instagram.com/p/DTW-H3JgNTH/",
     alt: "KE.KOPI STREET - Counter"
   },
   {
     id: 3,
-    url: "/images/shop-photo-3.jpg",
+    url: `${import.meta.env.BASE_URL}images/shop-photo-3.jpg`,
     instagramUrl: "https://www.instagram.com/p/DO8pezbDx23/",
     alt: "KE.KOPI STREET - Espresso Machine"
   },
