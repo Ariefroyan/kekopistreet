@@ -1,0 +1,151 @@
+import { motion } from "framer-motion";
+
+// Placeholder images - ganti dengan foto asli coffee shop
+const shopImages = [
+  {
+    id: 1,
+    url: "/images/shop-exterior.jpg", // Foto tampak depan coffee shop
+    alt: "KE.KOPI STREET - Tampak Depan",
+    caption: "Tampak Depan Coffee Shop"
+  },
+  {
+    id: 2,
+    url: "/images/shop-interior.jpg", // Foto interior
+    alt: "KE.KOPI STREET - Interior",
+    caption: "Suasana Interior"
+  },
+  {
+    id: 3,
+    url: "/images/shop-location.jpg", // Foto lokasi/petunjuk
+    alt: "KE.KOPI STREET - Lokasi",
+    caption: "Petunjuk Lokasi"
+  },
+];
+
+export default function ShopLocationPhotos() {
+  return (
+    <section className="py-16 lg:py-24 px-6 lg:px-8 bg-card/30">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-4"
+          >
+            <div className="w-8 h-px bg-primary" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+              Temukan Kami
+            </span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl lg:text-5xl font-bold tracking-tight mb-4"
+          >
+            Lokasi Coffee Shop
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-base text-foreground/60 max-w-2xl"
+          >
+            Jl. Jend. Sudirman No.22, Rembiga, Kec. Selaparang, Kota Mataram, NTB 83124
+          </motion.p>
+        </div>
+
+        {/* Photo Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {shopImages.map((image, i) => (
+            <motion.div
+              key={image.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="group relative overflow-hidden bg-card border border-border"
+            >
+              {/* Image */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    // Fallback to placeholder
+                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23f0f0f0" width="800" height="600"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-size="24"%3E' + encodeURIComponent(image.caption) + '%3C/text%3E%3C/svg%3E';
+                  }}
+                />
+              </div>
+
+              {/* Caption */}
+              <div className="p-4 bg-background/95 backdrop-blur-sm">
+                <p className="font-mono text-xs text-foreground/80 tracking-wide">
+                  {image.caption}
+                </p>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Direction Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-12 p-6 border border-border bg-card"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 flex items-center justify-center border border-primary shrink-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-primary"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="font-heading text-lg font-semibold mb-2">
+                Cara Menuju Lokasi
+              </h3>
+              <p className="text-sm text-foreground/70 leading-relaxed mb-3">
+                Dari pusat kota Mataram, ambil arah ke Jl. Jend. Sudirman. 
+                Coffee shop kami berada di sebelah kanan jalan, nomor 22, area Rembiga.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-primary/10 text-primary font-mono text-xs">
+                  Dekat Selaparang
+                </span>
+                <span className="px-3 py-1 bg-primary/10 text-primary font-mono text-xs">
+                  Parkir Tersedia
+                </span>
+                <span className="px-3 py-1 bg-primary/10 text-primary font-mono text-xs">
+                  Akses Mudah
+                </span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

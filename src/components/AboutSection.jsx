@@ -35,7 +35,7 @@ export default function AboutSection() {
                 Mataram, NTB
               </p>
               <p className="font-heading text-lg font-bold text-primary">
-                Cakranegara
+                Rembiga
               </p>
             </div>
           </motion.div>
