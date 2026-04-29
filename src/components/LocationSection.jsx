@@ -133,7 +133,7 @@ export default function LocationSection() {
             className="relative h-[400px] lg:h-full min-h-[400px]"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.2847654321!2d116.11234!3d-8.58234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMzQnNTYuNCJTIDExNsKwMDYnNDQuNCJF!5e0!3m2!1sen!2sid!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3945.2847654321!2d116.1118916177771!3d-8.562826629915108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMzMnNDYuMiJTIDExNsKwMDYnNDIuOCJF!5e0!3m2!1sen!2sid!4v1234567890"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -148,7 +148,7 @@ export default function LocationSection() {
                 Coordinates
               </p>
               <p className="font-mono text-xs text-primary">
-                -8.5823° S, 116.1123° E
+                -8.5628° S, 116.1119° E
               </p>
             </div>
           </motion.div>

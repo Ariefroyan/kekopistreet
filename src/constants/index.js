@@ -12,8 +12,8 @@ export const APP_CONFIG = {
     country: 'Indonesia',
     fullAddress: 'Jl. Jend. Sudirman No.22, Rembiga, Kec. Selaparang, Kota Mataram, Nusa Tenggara Bar. 83124, Indonesia',
     coordinates: {
-      lat: -8.5823,
-      lng: 116.1123,
+      lat: -8.562826629915108,
+      lng: 116.1118916177771,
     },
   },
   contact: {
