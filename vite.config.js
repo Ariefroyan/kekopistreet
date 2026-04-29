@@ -9,13 +9,17 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/kekopistreet/' : '/',
   logLevel: 'error',
   plugins: [
-    base44({
-      legacySDKImports: false,
-      hmrNotifier: true,
-      navigationNotifier: true,
-      analyticsTracker: true,
-      visualEditAgent: true
-    }),
+    // Disable Base44 plugin in production to prevent blank screen
+    // Enable it back when you have real Base44 credentials
+    ...(process.env.NODE_ENV !== 'production' ? [
+      base44({
+        legacySDKImports: false,
+        hmrNotifier: true,
+        navigationNotifier: true,
+        analyticsTracker: true,
+        visualEditAgent: true
+      })
+    ] : []),
     react(),
   ],
   resolve: {
