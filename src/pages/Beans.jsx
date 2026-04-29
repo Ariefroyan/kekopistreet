@@ -1,25 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { base44 } from "@/api/base44Client";
 import BeanCard from "../components/BeanCard";
+import { coffeeBeans } from "@/data/beansData";
 
 export default function Beans() {
-  const [beans, setBeans] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const data = await base44.entities.CoffeeBean.list();
-        setBeans(data);
-      } catch (error) {
-        console.error("Error loading beans:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, []);
+  const [beans] = useState(coffeeBeans);
 
   return (
     <div className="min-h-screen pt-20">
@@ -58,11 +43,7 @@ export default function Beans() {
 
       {/* Beans Grid */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
-        {loading ? (
-          <div className="flex justify-center py-20">
-            <div className="w-6 h-6 border-2 border-muted border-t-primary rounded-full animate-spin" />
-          </div>
-        ) : beans.length === 0 ? (
+        {beans.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-mono text-sm text-muted-foreground">
               No beans available yet. Check back soon.

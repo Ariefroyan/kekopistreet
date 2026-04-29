@@ -1,35 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { base44 } from "@/api/base44Client";
 import MenuCard from "../components/MenuCard";
+import { menuItems } from "@/data/menuData";
 
 const LATTE_IMG = "https://media.base44.com/images/public/69f1fbce43c2df16a7eda044/8a1873ad8_generated_e6dc2a68.png";
 
-const categories = ["All", "Espresso", "Signature", "Non-Coffee"];
+const categories = ["All", "Espresso", "Signature", "Pour Over", "Cold Brew", "Non-Coffee", "Food"];
 
 export default function Menu() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
-
-  useEffect(() => {
-    async function load() {
-      try {
-        const data = await base44.entities.MenuItem.list();
-        setItems(data);
-      } catch (error) {
-        console.error("Error loading menu:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, []);
 
   const filtered =
     activeCategory === "All"
-      ? items
-      : items.filter((item) => item.category === activeCategory);
+      ? menuItems
+      : menuItems.filter((item) => item.category === activeCategory);
 
   return (
     <div className="min-h-screen pt-20">
@@ -62,8 +46,7 @@ export default function Menu() {
                 transition={{ delay: 0.2 }}
                 className="text-base text-foreground/60 max-w-md leading-relaxed"
               >
-                Each drink is precisely calibrated — temperature, ratio, and
-                timing engineered for peak flavor extraction.
+                Setiap minuman dibuat dengan presisi — suhu, rasio, dan timing yang tepat untuk ekstraksi rasa maksimal.
               </motion.p>
             </div>
 
@@ -109,14 +92,10 @@ export default function Menu() {
 
       {/* Menu Items */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:py-12">
-        {loading ? (
-          <div className="flex justify-center py-20">
-            <div className="w-6 h-6 border-2 border-muted border-t-primary rounded-full animate-spin" />
-          </div>
-        ) : filtered.length === 0 ? (
+        {filtered.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-mono text-sm text-muted-foreground">
-              No items in this category yet.
+              Tidak ada item di kategori ini.
             </p>
           </div>
         ) : (

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { coffeeBeans } from "@/data/beansData";
 
 const roastLevels = {
   Light: 20,
@@ -18,17 +18,9 @@ export default function BeanDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function load() {
-      try {
-        const data = await base44.entities.CoffeeBean.get(beanId);
-        setBean(data);
-      } catch (error) {
-        console.error("Error loading bean:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
+    const foundBean = coffeeBeans.find(b => b.id === beanId);
+    setBean(foundBean);
+    setLoading(false);
   }, [beanId]);
 
   if (loading) {

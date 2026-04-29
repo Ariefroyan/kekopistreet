@@ -1,4 +1,3 @@
-import base44 from "@base44/vite-plugin"
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import path from 'path'
@@ -9,17 +8,6 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/kekopistreet/' : '/',
   logLevel: 'error',
   plugins: [
-    // Disable Base44 plugin in production to prevent blank screen
-    // Enable it back when you have real Base44 credentials
-    ...(process.env.NODE_ENV !== 'production' ? [
-      base44({
-        legacySDKImports: false,
-        hmrNotifier: true,
-        navigationNotifier: true,
-        analyticsTracker: true,
-        visualEditAgent: true
-      })
-    ] : []),
     react(),
   ],
   resolve: {
